@@ -2,8 +2,6 @@
 
 Skills for AI agents (Claude Code, Cursor, Grok Bot) that find and fix AI slop. Design first; LinkedIn and writing skills are coming soon.
 
-![Before and after: a template AI landing page and the same page after slop-proof-design](slop-proof-design/test/before-after.png)
-
 ## slop-proof-design
 
 A skill that makes a design better in the style it already has, and stops it looking AI-made. It works on web pages, UI, social graphics, ads and AI images.

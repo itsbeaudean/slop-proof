@@ -20,7 +20,7 @@ Skill version: the one in this folder.
 
 Invented content: none. Every claim on the page traces to the original (beta, all-in-one platform, AI-powered workflows, speed, tool connections, bank-grade security, the three perks, free trial). The fake logo bar, the 10K+, 99.9% and 4.9 stats and the gradient were removed and not replaced with new ones. The empty gradient hero became a framed `[product screenshot]` slot.
 
-Gutting: no. It kept a two-column first screen with headline, offer, one filled primary action, a text link and the product slot, plus all three sections and the closing call to action. It holds up at phone width (`after-phone.png`).
+Gutting: no. It kept a two-column first screen with headline, offer, one filled primary action, a text link and the product slot, plus all three sections and the closing call to action. It holds up at phone width.
 
 Misses and false positives:
 - H26 was applied to the landing-page hero, although the rule says it is for ads and social images.
