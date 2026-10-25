@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowSync | AI-powered workflows for teams</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.45;
+    background: #1A1820;
+    color: #E8E6EE;
+    text-align: left;
+  }
+  a { color: #E8E6EE; }
+  .wrap { width: min(960px, calc(100% - 48px)); margin: 0 auto; }
+  .site-head { padding: 24px 0; display: flex; align-items: baseline; gap: 16px; }
+  .mark { font-weight: 600; font-size: 16px; }
+  .beta { font-size: 16px; color: #C6C1D2; }
+  .hero { padding: 48px 0 64px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+  h1 { font-size: 48px; font-weight: 600; line-height: 1.15; color: #F4F2F8; max-width: 16ch; }
+  .sub { margin-top: 16px; max-width: 65ch; color: #C6C1D2; }
+  .actions { margin-top: 32px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 24px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; min-width: 44px; padding: 12px 24px;
+    border-radius: 4px; font-size: 16px; font-weight: 600; text-decoration: none;
+  }
+  .btn.primary { background: #5B21B6; color: #fff; }
+  .btn.primary:hover { background: #4C1D95; }
+  .text-link { font-size: 16px; color: #C6C1D2; }
+  .shot {
+    min-height: 280px; border: 1px solid #3A3644; background: #241F2C;
+    display: flex; align-items: center; justify-content: center;
+    color: #C6C1D2; font-size: 16px;
+  }
+  section { padding: 64px 0; border-top: 1px solid #3A3644; }
+  h2 { font-size: 24px; font-weight: 600; line-height: 1.25; color: #F4F2F8; margin-bottom: 16px; }
+  .lead { max-width: 65ch; color: #C6C1D2; }
+  .points { margin-top: 32px; display: grid; gap: 32px; }
+  .points h3 { font-size: 16px; font-weight: 600; color: #F4F2F8; margin-bottom: 8px; }
+  .points p { max-width: 65ch; color: #C6C1D2; }
+  .perks { list-style: none; margin-top: 24px; display: grid; gap: 12px; max-width: 65ch; color: #C6C1D2; }
+  .close { padding-bottom: 96px; }
+  @media (max-width: 720px) {
+    .wrap { width: calc(100% - 32px); }
+    .hero { grid-template-columns: 1fr; gap: 32px; padding: 32px 0 48px; }
+    h1 { font-size: 36px; }
+    section { padding: 48px 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="site-head">
+      <p class="mark">FlowSync</p>
+      <p class="beta">Now in beta</p>
+    </header>
+
+    <div class="hero">
+      <div>
+        <h1>AI-powered workflows for teams</h1>
+        <p class="sub">FlowSync is the all-in-one platform that helps teams work and collaborate with AI-powered workflows.</p>
+        <div class="actions">
+          <a class="btn primary" href="#">Start your free trial</a>
+          <a class="text-link" href="#">Learn more</a>
+        </div>
+      </div>
+      <div class="shot">[product screenshot]</div>
+    </div>
+
+    <section>
+      <h2>Speed, tools, and security</h2>
+      <p class="lead">What FlowSync already offers teams.</p>
+      <div class="points">
+        <div>
+          <h3>Lightning fast</h3>
+          <p>Work at speed so the workflow itself takes less time.</p>
+        </div>
+        <div>
+          <h3>Connect your tools</h3>
+          <p>Connect your favourite tools without extra fuss.</p>
+        </div>
+        <div>
+          <h3>Enterprise security</h3>
+          <p>Bank-grade security you can trust.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Built for how teams actually work</h2>
+      <ul class="perks">
+        <li>Save hours every week</li>
+        <li>Stay focused on what matters</li>
+        <li>Make room for the team’s creativity</li>
+      </ul>
+    </section>
+
+    <section class="close">
+      <h2>Start FlowSync with your team</h2>
+      <p class="lead" style="margin-bottom: 24px;">Now in beta. Start a free trial when you are ready.</p>
+      <a class="btn primary" href="#">Start your free trial</a>
+    </section>
+  </div>
+</body>
+</html>

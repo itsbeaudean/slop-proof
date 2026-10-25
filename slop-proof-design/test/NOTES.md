@@ -1,33 +1,62 @@
 # Test notes
 
-`before.html` is a deliberately sloppy landing page for a made-up product, FlowSync. Each run gave an AI agent (headless, no tools) the skill and `before.html` in one prompt and asked for a hit list and a fixed page. Screenshots are full-page headless Chrome at 1280px wide. Counts below were measured from the rendered pages (computed styles of visible text), not estimated.
+Three deliberately sloppy samples: a landing page for a made-up product (`before.html`), a 4:5 social ad (`social-before.html`, brief in `social-brief.txt`) and a one-slide chart (`slide-before.html`, brief in `slide-brief.txt`). Each run gave an AI agent (headless, no tools) the skill, the brief and the file in one prompt and asked for a hit list and a fixed file. Pages were rendered in headless Chrome at 1280px and 375px, the ad at 1080 by 1350 and the slide at 1920 by 1080. Every figure below was measured from the rendered result (computed styles, WCAG contrast of each text element against its real background, rendered box sizes), not estimated.
 
-## Current result (`after.*`, `hits.txt`)
+## Current results
 
-Skill version: the one in this folder.
+Skill version: the one in this folder (44 hard rules, 39 tells).
+
+### Landing page (`after.html`, `hits.txt`)
 
 | Measure | Before | After |
 | --- | --- | --- |
-| Problems caught | | 45 (23 hard rules, 22 AI tells) |
-| Distinct rendered font sizes | 9 (12, 14, 16, 18, 20, 24, 40, 48, 64px) | 3 (16, 24, 48px) |
-| Distinct text colours | 5, one of them gradient-clipped text | 4, all solid |
+| Problems caught | | 44 (21 hard rules, 23 AI tells) |
+| Distinct rendered font sizes | 9 (12 to 64px) | 3 (16, 20, 48px; 32px headline on phones) |
+| Distinct text colours | 5, one gradient-clipped | 4, all solid |
 | Background fills | 6 (4 gradients, 2 translucent glass) | 2 solid |
 | Emoji | 8 | 0 |
 | Animated elements | 22 | 0 |
-| Words of copy | 118 | 109 |
-| Page height | 2,625px | 1,498px |
-| Lowest text contrast | 70% white on a pink gradient (fails) | 8.98:1, white on the violet button |
+| Words of copy | 118 | 64 |
+| Lowest text contrast | 70% white on a pink gradient (fails) | 6.25:1 |
+| Primary button, rendered | | 189 by 48px |
 
-Invented content: none. Every claim on the page traces to the original (beta, all-in-one platform, AI-powered workflows, speed, tool connections, bank-grade security, the three perks, free trial). The fake logo bar, the 10K+, 99.9% and 4.9 stats and the gradient were removed and not replaced with new ones. The empty gradient hero became a framed `[product screenshot]` slot.
+Invented content: none. The fake logo bar, the 10K+, 99.9% and 4.9 stats and the gradient were removed, not replaced. The empty hero became a framed `[product screenshot]` slot beside the headline, offer and one primary action. All three features, the benefits list and the closing call to action stayed. The earlier false positives are gone: H26 was not applied to the hero and H27 was not flagged from padding.
 
-Gutting: no. It kept a two-column first screen with headline, offer, one filled primary action, a text link and the product slot, plus all three sections and the closing call to action. It holds up at phone width.
+Misses: cutting the hype left thin copy. "Connect your favourite tools" now repeats as heading and body, and "Unleash your team's creativity" became the stub "Your team's creativity". The H15 hit also mentions centred body text, which H15 says is not its concern. Step 7 now says to merge or drop stubs and repeats.
 
-Misses and false positives:
-- H26 was applied to the landing-page hero, although the rule says it is for ads and social images.
-- H27 was flagged from CSS padding; the rendered buttons are 146 to 229px wide and 48 to 50px tall, so they pass.
-- H15 also claimed the body was "justified by centering", which is not what justified means. The caps-label part of that hit was right.
-- Some filler copy crept in: "What FlowSync already offers teams." and "Built for how teams actually work". Not invented facts, but weak (T23).
-- It kept a solid violet accent. Defensible as the owner's colour, close to T7.
+### Social ad (`social-after.html`, `social-hits.txt`)
+
+| Measure | Before | After |
+| --- | --- | --- |
+| Problems caught | | 34 (15 hard rules, 19 AI tells) |
+| Distinct font sizes | 8 (16 to 92px) | 3 (20, 24, 60px) |
+| Emoji | 11 | 0 |
+| Words | 48 | 29 |
+| Text over gradients and orbs | all of it | none; lowest contrast 9.09:1 |
+
+The headline is now the brief's main fact ("Grinds and brews a cup in about 2 minutes"), with the app feature, the price on the button and the 1 March pre-order date. The five stars, "50,000+ coffee lovers", "Sustainable" and "AI-powered" claims are gone and nothing new was added. The orbs became a large `[product photo]` slot, so the ad keeps its visual.
+
+Misses: the brand name is a small 20px label, weaker than H44 asks for. The ad is flat until a real product photo goes in.
+
+### Slide (`slide-after.html`, `slide-hits.txt`)
+
+| Measure | Before | After |
+| --- | --- | --- |
+| Problems caught | | 40 (20 hard rules, 20 AI tells) |
+| Value axis | starts at 4.0, so West (4.1) is drawn at 20% of North (4.96) | starts at 0 |
+| Title | "Driving Growth Through Innovation" | "North grew most because of the new Brisbane depot" |
+| Bars | four rainbow gradients with glows and a legend | sorted, North in one colour, the rest grey, values on the bars |
+| Distinct font sizes | 6 (14 to 60px) | 2 (24, 48px) |
+| Lowest text contrast | about 2.5:1 (footer) | 7.38:1 |
+| Words | 74 | 28 |
+
+All four values match the brief and the title is the brief's finding. The six filler bullets, including claims not in the brief ("record-breaking", "customer satisfaction remained strong"), were removed.
+
+Misses: the bars are scaled to the plot height minus 32px while the gridlines use the full height, so each bar ends about 5% short of its value against the axis (North reads near 4.73). H37 now says each bar must end on its value. The "Confidential, internal use only, Q3 FY26" footer was dropped; step 7 now names footers and legal lines as content to keep. The chart fills only the left half of the plot.
+
+## Run 5 (`run5-*`): before the latest rule changes
+
+45 hits. Fonts 9 to 3, emoji 8 to 0, animated elements 22 to 0, words 118 to 109, lowest contrast 8.98:1, nothing invented. False positives: H26 applied to the landing-page hero, H27 flagged from CSS padding (rendered buttons were 48 to 50px tall), and an H15 hit that called centred text "justified". Some filler copy crept in ("Built for how teams actually work"). These led to the scoped H26, the rendered-box wording in H27, the reworded H15 and the no-filler-copy rule.
 
 ## Run 1 (`run1-*`): over-correction
 
@@ -41,4 +70,4 @@ The fix went too far. It deleted almost everything, shrank the headline to 32px 
 
 ## Run 3 (not kept)
 
-With the no-invention rule in place it invented nothing, but drifted back towards a bare text page with no visual on the first screen (82 words, no product area). Step 7 now asks for a strong, visual first screen and a sized slot for the real product where decoration stood in for it. The current result above is the run after that change.
+With the no-invention rule in place it invented nothing, but drifted back towards a bare text page with no visual on the first screen (82 words, no product area). Step 7 now asks for a strong, visual first screen and a sized slot for the real product where decoration stood in for it. Run 5 above came after that change.

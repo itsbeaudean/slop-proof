@@ -1,0 +1,40 @@
+H1: .chart h3, .bars, .bar span, .legend, .foot: 20px, 28px, 34px, 56px, 40px, 6px spacing off the 4 to 8 to 12 to 16 to 24 to 32 to 48 to 64 to 96 scale
+H2: h1: 12px to the eyebrow and 24px to the content, so the heading sits farther from its chart than from the label above
+H5: h1, six bullets, and glowing rainbow chart: three competing focals; squint test has no single first stop
+H6: 60px, 22px, 20px, 18px, 16px, 14px: more than three text sizes
+H8: .bar and .chart: purple glows and four saturated gradients shout instead of muting the other regions
+H10: h1 and ul: headline opens with “Driving Growth”; the North finding is buried in the third bullet
+H13: ul: line-height 1.9 (190%) outside 120 to 145%
+H14: ul: 22px is not on the type scale
+H15: .eyebrow: all-caps label with 0.3em tracking (above 5 to 12%)
+H16: .foot #475569 and .axis #64748B on #0F0A1E / #312E81: under 4.5:1 (foot closer to ~2.5:1)
+H16: .eyebrow #A78BFA on indigo #312E81: under 4.5:1 for 20px text
+H18: body: background #0F0A1E is near-black, not a planned dark grey
+H19: body, .chart h3, .bar span, .legend: grey (#CBD5E1, #94A3B8) on a purple field
+H20: .bar fills and .legend swatches: regions encoded by colour only
+H33: h1: Title Case; values not tabular
+H35: .bar: four rainbow hues; North is not isolated by greying the rest
+H37: .axis and .bar heights: axis starts at 4.0; West 20% vs East 40% inflates a 4.1 vs 4.2 gap
+H38: .chart h3, .legend, .bar: title describes the chart; legend repeats names; values not on the marks
+H39: h1 and ul: slogan plus bullets instead of a two-line sentence headline with the chart as evidence
+H40: ul 22px (~16.5pt) below 18 to 24pt body; .axis/.foot/.legend 14px below 14pt callouts
+T1: .eyebrow + h1: tracked badge, big headline, generic subcopy
+T4: body: decorative indigo orb gradient in place of the data
+T5: ul li::before and h1: rocket, sparkle and lightbulb emoji
+T7: body and .bar: violet to indigo wash and pink/purple/green/blue bar gradients
+T8: .chart: translucent blur panel
+T9: .chart and .bar: purple glow shadows
+T10: .chart 24px radius and glow on the only container
+T12: body: dark purple field with mid-grey text
+T13: body: stock dark-purple AI slide look
+T14: body: Arial for everything; emoji as the accent in the headline
+T15: .eyebrow: “Q3 PERFORMANCE OVERVIEW” tracked caps
+T16: .foot: middle-dot meta string
+T23: h1: “Driving Growth Through Innovation” could sell any company
+T24: ul: seamless, elevate, unlock, leveraging synergies, omnichannel, record-breaking
+T25: ul: “strong and robust” and a stack of interchangeable platitudes
+T26: h1: Title Case On Every Word
+T27: ul: record-breaking North, all-region growth, customer satisfaction , none in the brief
+T28: whole slide: swap the title and it is still a generic growth review
+T37: whole slide: topic title, bullets, generic chart
+T38: .bars: gradient bars, rainbow series, legend, shadows on marks, truncated axis

@@ -1,0 +1,34 @@
+H1: .wrap/.pill/.glass/.cta: padding and margins of 10, 26, 36, 40, 44, 60px sit off an 8px scale
+H5: frame: pill, 92px headline, glass row, stars and CTA all compete; no single focal point
+H6: frame: eight type sizes (16, 22, 24, 26, 30, 34, 54, 92px)
+H7: .sub: Inter 300 is below 400; four weights in one view
+H10: h1: opens with “Revolutionize Your” instead of the grind-and-brew offer
+H14: 22, 26, 34, 54, 92px are off a short type scale
+H15: .pill: all-caps with 0.25em tracking; .fine is an all-caps slogan
+H16: .fine/.sub/.stars: white at 45 to 80% opacity on the purple-pink wash fails 4.5:1 in places
+H17: body: indigo, violet, pink, gold and white , more than two main plus two secondary
+H19: .sub/.stars/.fine: grey/white-at-opacity on a coloured background
+H21: body: type sits on a gradient and orbs with no solid panel or scrim
+H22: frame: no photo of the Brewline machine
+H26: ad: AI pitch, three features, fake social proof and a generic CTA , more than one message
+H29: orbs, emoji, glass row, stars and slogan do not explain the offer
+H44: .pill: brand is a small badge; product is missing; colours are not the machine’s
+T1: .wrap: centred pill, giant headline, subhead and CTA
+T2: .feat: three equal emoji-plus-label cells
+T4: .orb/.orb2: glowing blobs where the product should be
+T5: pill/h1/.feat/.stars: emoji stand in for icons
+T7: body/h1/.cta: violet to indigo to pink wash and gold-pink gradient headline
+T8: .pill/.glass: frosted translucent panels
+T9: .orb/.glass/.cta: coloured glows
+T10: .pill/.glass/.cta: the same large radius and soft shadow
+T14: body/h1 span: Inter everywhere; gradient accent word
+T15: .pill: “Introducing Brewline AI” eyebrow
+T16: .fine: middle dots; .cta: arrow on the button
+T23: h1: “Revolutionize Your Morning Ritual”
+T24: .sub: next-generation, seamlessly, elevates, cutting-edge, AI-powered
+T25: .feat: Lightning Fast / AI-Powered / Sustainable
+T26: h1: Title Case; .cta: “Get Started Now”
+T27: .stars: 50,000+ and five stars; Sustainable is not in the brief
+T28: frame: swap the name and it is still a generic AI launch ad
+T34: .wrap: pill, emoji and glass strip clutter the hero
+T35: .orb/.orb2: blurred orbs as gimmick texture

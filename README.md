@@ -4,16 +4,16 @@ Skills for AI agents that find and fix AI slop. They work with any agent that ca
 
 ## slop-proof-design
 
-Like the `unslop` writing skill, but for design. It makes a design better in the style it already has, and stops it looking AI-made. It works on anything visual: social graphics, ads, web pages, UI and AI images.
+Like the `unslop` writing skill, but for design. It makes a design better in the style it already has, and stops it looking AI-made. It works on anything visual: web pages and UI, social graphics and ads, slides and posters, charts and data visuals, logos and icons, and AI-generated images.
 
 It gives the agent:
 
-- **29 hard rules** (H1 to H29) on spacing, hierarchy, type, colour, imagery, copy and targets. Every number comes from a cited source, such as WCAG contrast ratios, NN/g research and Material guidelines.
-- **32 AI tells** (T1 to T32): the template hero, three identical cards, purple gradients, glass, glows, emoji bullets, eyebrow labels, cards inside cards, fake stats and logo bars, stock headlines and more.
-- **A workflow**: gather the brief and approved examples, review a mock-up before building, render and scan, list hits by rule id, fix in priority order, then run a 16-point final check.
-- **Guard rails**: keep the owner's style, never gut the design, and never invent features, numbers, customers or quotes. Missing facts get a short placeholder such as `[customer quote]`.
+- **44 hard rules** (H1 to H44) on spacing, hierarchy, type, colour, imagery, copy, targets, grids and reading order, charts, slides, logos and icons, and ad formats. Every number comes from a cited source, such as WCAG, eye-tracking studies, graphical-perception research and platform guidelines.
+- **39 AI tells** (T1 to T39): the template hero, three identical cards, bento grids, purple gradients, glass, glows, emoji bullets, eyebrow labels, cards inside cards, fake stats and star ratings, stock headlines, same-looking decks, decorated charts, stock-glyph logos, too-perfect faces and objects that could not work.
+- **A workflow**: gather the brief and approved examples, review a mock-up before building, render and scan, list hits by rule id, fix in priority order, then run a 16-point final check. A short note per medium says which rules matter most there.
+- **Guard rails**: keep the owner's style, never gut the design, never invent features, numbers, data, customers or quotes, and never add filler copy. Missing facts get a short placeholder such as `[customer quote]`.
 
-`SOURCES.md` lists all 56 sources and says which ones are practitioner advice rather than research.
+`SOURCES.md` lists all 114 sources and labels each one as research, industry research, a standard or guideline, practitioner advice or journalism.
 
 ## Install
 
