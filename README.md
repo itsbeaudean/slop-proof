@@ -1,6 +1,6 @@
 # slop-proof
 
-Skills for AI agents that find and fix AI slop. They work with any agent that can read a skill file. Design first; LinkedIn and writing skills are coming soon.
+Skills for AI agents that find and fix AI slop. They work with any agent that can read a skill file.
 
 ## slop-proof-design
 
@@ -38,10 +38,6 @@ git clone https://github.com/itsbeaudean/slop-proof.git
 The agent lists each hit as `id: where: what is wrong` (for example `H16` for contrast or `T7` for the purple gradient), fixes them in order, checks it did not swap in another default, and runs the final check. Give it your brand rules and examples of approved work for better results.
 
 The rules are floors, not taste. They lift most designs, but they will not replace a designer's judgement.
-
-## More skills coming
-
-LinkedIn and writing skills will follow in this repo.
 
 ## Credit
 
