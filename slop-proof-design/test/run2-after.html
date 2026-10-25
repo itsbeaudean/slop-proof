@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FlowSync | A board that follows work in other tools</title>
+<style>
+  :root {
+    --bg: #18191F;
+    --bg-raised: #22232C;
+    --bg-inset: #14151A;
+    --line: #3E404C;
+    --text: #F3F4F8;
+    --muted: #C9CBD4;
+    --accent: #6B63E8;
+    --accent-text: #FFFFFF;
+    --space: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.45;
+  }
+  a { color: var(--text); }
+  .wrap {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+  }
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .wordmark {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+  }
+  .beta {
+    font-size: 18px;
+    color: var(--muted);
+    margin-left: 16px;
+  }
+  .link {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 64px;
+    align-items: center;
+    padding: 64px 0 96px;
+  }
+  h1 {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.15;
+    max-width: 16ch;
+    margin-bottom: 16px;
+  }
+  .lede {
+    color: var(--muted);
+    max-width: 65ch;
+    margin-bottom: 32px;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 12px 24px;
+    background: var(--accent);
+    color: var(--accent-text);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 0;
+  }
+  .btn:focus {
+    outline: 2px solid var(--text);
+    outline-offset: 4px;
+  }
+  .mock {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: 4px 8px 0 #0F1014;
+    overflow: hidden;
+  }
+  .mock-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--bg-inset);
+    border-bottom: 1px solid var(--line);
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 8px;
+    background: var(--line);
+  }
+  .mock-meta {
+    padding: 16px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+    font-size: 18px;
+  }
+  .board {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    padding: 16px;
+  }
+  .col {
+    background: var(--bg-inset);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px;
+    min-height: 240px;
+  }
+  .col h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+  .ticket {
+    background: var(--bg-raised);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 8px;
+    font-size: 18px;
+  }
+  .ticket strong { display: block; font-weight: 700; margin-bottom: 4px; }
+  .ticket span { color: var(--muted); }
+  .ticket.on {
+    background: var(--text);
+    color: var(--bg);
+    border-color: var(--text);
+  }
+  .ticket.on span { color: #3A3B46; }
+  .features { padding: 0 0 96px; }
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 32px;
+    max-width: 28ch;
+  }
+  .feature-lead {
+    max-width: 65ch;
+    margin-bottom: 48px;
+  }
+  .feature-lead p { color: var(--muted); margin-top: 12px; }
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 900px;
+  }
+  .split h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .split p { color: var(--muted); }
+  .quote {
+    border-top: 1px solid var(--line);
+    padding: 64px 0;
+    max-width: 65ch;
+    color: var(--muted);
+  }
+  .quote p {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+  .close {
+    border-top: 1px solid var(--line);
+    padding: 64px 0 96px;
+    max-width: 65ch;
+  }
+  .close p { color: var(--muted); margin: 16px 0 32px; }
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 24px 0 48px;
+    color: var(--muted);
+  }
+  @media (max-width: 800px) {
+    .hero, .board, .split { grid-template-columns: 1fr; }
+    h1 { font-size: 24px; max-width: none; }
+    .hero { gap: 32px; padding: 48px 0; }
+    .col { min-height: 0; }
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <p><a class="wordmark" href="#">FlowSync</a><span class="beta">In beta</span></p>
+      <a class="link" href="#access">Request beta access</a>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h1>The board that follows work in other tools</h1>
+        <p class="lede">FlowSync is a shared board for teams whose tasks start in chat, trackers and documents. When a status changes in a connected tool, the same card moves here. The product is in beta.</p>
+        <a class="btn" href="#access">Request beta access</a>
+      </div>
+      <div class="mock" aria-hidden="true">
+        <div class="mock-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span> FlowSync</div>
+        <p class="mock-meta">Board: Weekly ops · Updated from connected tools</p>
+        <div class="board">
+          <div class="col">
+            <h3>To do</h3>
+            <div class="ticket"><strong>Draft the brief</strong><span>From mail</span></div>
+            <div class="ticket"><strong>Collect supplier notes</strong><span>From docs</span></div>
+          </div>
+          <div class="col">
+            <h3>Doing</h3>
+            <div class="ticket on"><strong>Review copy</strong><span>From chat · you</span></div>
+            <div class="ticket"><strong>Check access list</strong><span>From tracker</span></div>
+          </div>
+          <div class="col">
+            <h3>Done</h3>
+            <div class="ticket"><strong>Ship Friday update</strong><span>From tracker</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <h2>One board, kept current by the tools you already run</h2>
+      <article class="feature-lead">
+        <h3>Connects to the rest of the stack</h3>
+        <p>Point FlowSync at the chat, trackers and documents your team already uses. New items and status changes land on the board, so nobody copies the same card into a second list. Connected sources: [list of connected tools].</p>
+      </article>
+      <div class="split">
+        <article>
+          <h3>The board stays quick to use</h3>
+          <p>Lists stay on one screen while you drag a card, open a thread or jump back from another tool. The working surface is the board, not a loading state.</p>
+        </article>
+        <article>
+          <h3>Access stays with your organisation</h3>
+          <p>Workspaces are permissioned. Guests see only the boards you share. Controls for locked-down teams: [security certification].</p>
+        </article>
+      </div>
+    </section>
+
+    <figure class="quote">
+      <p>[customer quote]</p>
+      <figcaption>[name, role, organisation]</figcaption>
+    </figure>
+
+    <section class="close" id="access">
+      <h2>Ask for a beta login</h2>
+      <p>If your team wants the board and the connections in one place, request access. We will send a login for your organisation.</p>
+      <a class="btn" href="#">Request beta access</a>
+    </section>
+
+    <footer>FlowSync</footer>
+  </div>
+</body>
+</html>

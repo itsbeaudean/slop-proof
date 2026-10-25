@@ -1,0 +1,45 @@
+H1: .btn/.badge/.sub: padding 14px 28px, badge 6px, sub margin 40px off the 4-8-12-16-24-32-48-64-96 scale
+H2: h2: 48px gap under every heading treats heading and content as separate groups
+H3: body: all copy centred, so body lines and cards share no stable left edge
+H4: .hero: min-height 100vh stretches a short hero to fill the viewport
+H5: .hero: 64px headline, gradient word, pill badge and two glowing buttons compete as first stop
+H6: page: eight type sizes (12/14/16/18/20/40/48/64) and four+ contrast levels
+H8: .btn.primary/h1 .grad: glow and gradient shout instead of muting neighbours
+H9: .hero: two adjacent CTAs; primary also repeats in the last section with the same weight
+H10: h1: leads with “Unlock Your Potential” instead of FlowSync or the offer
+H12: .sub: 20px centred line on 640px runs wider than 75ch
+H13: ul.perks: line-height 2.2; card body 14px
+H14: h1/h2: 64px and 40px are outside the type scale
+H15: .badge/.eyebrow: all-caps labels with 0.2em tracking; body is justified by centering
+H16: .sub/.btn.ghost: 70% white and 0.4 white borders on the purple-pink wash fail a 4.5:1 / 3:1 pair
+H17: .hero/.icon: indigo, violet, pink plus greys: more than one accent
+H18: body: #0B0B0F with a single cool grey instead of a tinted grey ramp
+H19: .sub/.card p: grey and faded white on a coloured/tinted ground
+H21: .hero: headline, sub and buttons sit on a purple-pink gradient with no scrim
+H22: .hero: no product, place or work; decoration fills the first screen
+H25: page: glow, glass, equal cards and staggered fades raise visual complexity
+H26: .hero: badge, headline, sub and two actions; message is not one glance
+H27: .btn: 14px vertical padding leaves a short target before line-height
+H29: logos/stats/emoji/eyebrows: extra chrome that does not explain the offer
+T1: .hero: centred pill, big headline, one-line sub, two buttons
+T2: .cards: three equal cards, icon, two-word title, one line
+T3: TRUSTED BY / .stats: logo bar and round-number stat row
+T4: .hero: radial violet orb and full-bleed gradient where the product should be
+T5: .badge/.icon/ul.perks: sparkle, rocket, lightning, lock and emoji bullets in gradient rounded squares
+T6: .fade/.card:every section fades up; cards and buttons lift on hover
+T7: .hero/h1 .grad/.btn.primary: violet-to-indigo-to-pink wash and gradient headline word
+T8: .badge/.card: translucent blur panels and 1px glass borders
+T9: .btn/.hero: 40px violet glow and coloured radial bloom
+T10: .card/.btn: 12px radius and the same soft shadow on every surface
+T11: .card: 3px violet top stripe on each card
+T12: body: near-black ground with #9CA3AF body copy
+T14: body/h1 .grad: Inter for everything; one gradient italic-style accent word
+T15: .eyebrow: TRUSTED BY, FEATURES, WHY FLOWSYNC
+T16: .logos/.btn: middle dots between names; arrows on both primary buttons
+T23: h1/h2: “Unlock Your Potential”, “Everything You Need To Succeed”, “Ready To Transform Your Workflow?”
+T24: .sub/.card/h2: seamlessly, supercharge, elevate, revolutionize, cutting-edge, game-changer, unleash
+T25: h2/ul.perks: “Not Just A Tool, It's A Game-Changer”; “Fast, simple, and secure”
+T26: h1/h2/.btn: Title Case On Every Heading; “Get Started”
+T27: .logos/.stats: ACME · GLOBEX · INITECH · UMBRELLA · HOOLI; 10K+, 99.9%, 4.9★
+T28: page: generic SaaS chrome; a competitor logo would still fit
+T30: page: unedited first-pass template with no critique pass
