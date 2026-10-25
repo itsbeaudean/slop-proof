@@ -1,6 +1,6 @@
 # Test notes
 
-`before.html` is a deliberately sloppy landing page for a made-up product, FlowSync. Each run gave Grok Build (headless, no tools) the skill and `before.html` in one prompt and asked for a hit list and a fixed page. Screenshots are full-page headless Chrome at 1280px wide. Counts below were measured from the rendered pages (computed styles of visible text), not estimated.
+`before.html` is a deliberately sloppy landing page for a made-up product, FlowSync. Each run gave an AI agent (headless, no tools) the skill and `before.html` in one prompt and asked for a hit list and a fixed page. Screenshots are full-page headless Chrome at 1280px wide. Counts below were measured from the rendered pages (computed styles of visible text), not estimated.
 
 ## Current result (`after.*`, `hits.txt`)
 

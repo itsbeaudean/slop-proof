@@ -130,7 +130,7 @@ T11. **Accent stripes.** A coloured top or left border on each card [3]. Once a 
 
 T12. **Dark mode with grey text.** Near-black background, medium-grey body text barely passing [2][3]. Fix: choose light or dark for the audience, then pass H16 [26].
 
-T13. **Swapping to the next default.** Dodging purple into another stock look: cream, serif and terracotta, or near-black with acid green [2]. Told to avoid Inter, Claude moved to Space Grotesk [1]. Over-correcting into a bare text page is the same mistake. Fix: derive the look from the subject and brief, then compare with these clusters [1][2].
+T13. **Swapping to the next default.** Dodging purple into another stock look: cream, serif and terracotta, or near-black with acid green [2]. Told to avoid Inter, one model moved straight to Space Grotesk [1]. Over-correcting into a bare text page is the same mistake. Fix: derive the look from the subject and brief, then compare with these clusters [1][2].
 
 ### Type
 

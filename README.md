@@ -17,13 +17,17 @@ It gives the agent:
 
 ## Install
 
-Clone the repo and copy the `slop-proof-design` folder into your agent's skills folder:
+Give this to your agent:
+
+```text
+Install the slop-proof-design skill from https://github.com/itsbeaudean/slop-proof. Copy the slop-proof-design folder into your skills folder. If you don't have a skills folder, save the contents of slop-proof-design/SKILL.md as a skill called slop-proof-design. Use it whenever you make, edit or review a design.
+```
+
+Or do it yourself: clone the repo and copy the `slop-proof-design` folder into your agent's skills folder.
 
 ```
 git clone https://github.com/itsbeaudean/slop-proof.git
 ```
-
-If your agent doesn't have a skills folder, paste the contents of `slop-proof-design/SKILL.md` at the start of the chat, or ask it to save it as a skill.
 
 ## Use
 
