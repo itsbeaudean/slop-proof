@@ -4,7 +4,7 @@ Skills for AI agents that find and fix AI slop. They work with any agent that ca
 
 ## slop-proof-design
 
-A skill that makes a design better in the style it already has, and stops it looking AI-made. It works on web pages, UI, social graphics, ads and AI images.
+Like the `unslop` writing skill, but for design. It makes a design better in the style it already has, and stops it looking AI-made. It works on anything visual: social graphics, ads, web pages, UI and AI images.
 
 It gives the agent:
 
