@@ -1,259 +1,293 @@
 ---
 name: slop-proof-design
-description: Use when making, editing or reviewing any visual design: web pages and UI, social graphics and ads, slides, charts, logos, icons and AI-generated images. Applies hard, sourced design rules and strips the default look of AI-made design.
+description: Anti-slop for design. A sourced list of what to avoid in web pages and UI, social graphics and ads, slides, charts, logos, icons and AI images and video. Use it as guardrails before designing or as a review pass that lists hits by id. It never designs or sets a style.
 ---
 
 # Slop-proof design
 
-Make a design better in the style it already has: apply the hard rules, then remove the AI defaults.
+A list of things to avoid. It does not design or set a style: the brief, the brand and the owner's taste decide the look. Each item says what the problem looks like, why it hurts or reads as AI-made, and how to spot it. [n] points to SOURCES.md.
 
-Rule ids are stable; a removed rule leaves a gap. [n] points to SOURCES.md, where every number comes from.
+## How to use it
 
-## How to run it
+**Tags.** Each item has one:
+- **Floor**: accessibility, legibility or honesty. Always a hit.
+- **Rule**: a sourced usability or craft failure. A hit unless the brief breaks it on purpose.
+- **Tell**: a default that reads as AI-made. One alone is fine if the brief chose it. Several together read as generated; one practitioner puts the threshold at 6 to 8 [1].
 
-1. Gather direction: the brief, the owner's approved work and brand rules, with concrete notes ("use this spacing", not "make it premium") and rejected patterns [56].
-2. For large work, get a mock-up or storyboard approved first; for motion, agree what moves and why [56].
-3. Name the medium and read its note under "Per medium". Render code at desktop and phone widths; view images, slides and ads at full size and as a thumbnail.
-4. Scan Part A, then Part B. List every hit as `id: where: what is wrong`, for example `H16: .sub on hero: 3.2:1 contrast`. Measure the rendered result, not the CSS, and apply each rule only within its stated scope and medium.
-5. Fix in this order: legibility and honest data (H12, H13, H16, H21, H27, H37), hierarchy (H5 to H10, H32), spacing and alignment (H1 to H4, H30), then type, colour and imagery, then Part B.
-6. Keep the owner's style: a dark, playful or minimal design should get better at being itself.
-7. Re-check. A fix that lands on another default is not a fix (T13), and nor is gutting the design: a landing page still needs a strong, visual first screen, the offer and one action; an ad or slide still needs its visual. Keep every real piece of content, including footers and legal lines. Add nothing the original or brief does not claim: no new features, details, numbers, data, customers or quotes, even in mock-ups and charts. No filler copy: no new taglines, intros or reassuring lines ("Built for how you work"); every new line carries a fact from the brief. If cutting hype leaves a stub or a line that repeats its heading, merge or drop it. Where decoration stood in for the product, give it a sized slot such as [product screenshot]; for a missing fact, a placeholder such as [customer quote]. No process notes in the design.
-8. Run the final check. Report hits, changes, and anything left alone on purpose. Save the owner's corrections, and why, beside their approved examples [56].
+**While designing.** Load this as guardrails. Nothing here says what to make instead.
 
-## Part A: Hard rules
+**When reviewing.**
+1. Look at the real thing. Render web and UI at 1280px and 375px wide. View images at 100% and as a thumbnail, slides at presentation size, ads at feed size. Measure the rendered result, not the code or the prompt.
+2. Scan only the areas that apply, plus X (all media).
+3. List each hit as `id: where: what`, for example `C1: .sub on hero: 3.2:1`.
+4. Propose the smallest fix for each hit, floors first. Don't redesign, swap one default for another (X7) or strip real content, including footers and legal lines.
+5. Invent nothing: no new facts, numbers, customers, quotes or filler lines. Mark a missing real item with a slot such as [product photo].
+6. Report hits, fixes, and anything left alone on purpose, with the reason.
 
-Style-agnostic.
+**New** marks avoids backed mainly by sources from May to October 2026: current image and video models, vibe-coding site builders and AI slide tools. Ids are stable; a removed item leaves a gap.
 
-### Spacing and alignment
+## X. Content and honesty (all media)
 
-H1. **Use a spacing scale.** Every margin, padding and gap from a short scale on a base unit (Material uses 8dp [37]), steps at least 25% apart [48]. Fix: snap odd values like 13px to 4, 8, 12, 16, 24, 32, 48, 64, 96.
+**X1. Avoid invented facts.** Floor. Numbers, customers, quotes, features or data not in the brief or original, even in mock-ups. Why: AI-made decks and pages carry unsourced numbers and fabricated facts [2][3][4]; US ads that claim to show "actual consumers" must use real ones [5]. Spot: trace every claim to a source the owner supplied.
 
-H2. **Group by proximity.** Space within a group is clearly smaller than between groups; a heading sits closer to its content than to the section above [40][38]. Fix: tighten within, loosen between.
+**X2. Avoid fake proof furniture.** Tell (Floor if invented). Round-number stat banners, star ratings, "Trusted by" logo bars and placeholder testimonials [6][7]. Spot: proof with no name, date or source attached.
 
-H3. **Share edges.** Align text, icons and images to a few common edges with a steady rhythm [37]. Fix: few distinct left edges.
+**X3. Avoid synthetic people, places or products where trust matters.** Floor. AI-made people or settings in health, finance, travel or big purchases [8][9]. Why: 62% of Americans reject AI-made people in ads even when disclosed [10]; disclosed AI luxury ads are seen as lower effort and less authentic [11]; the EU requires deepfake labels from 2 August 2026 [12]. Spot: a generated person or place shown as real [13][14].
 
-H4. **Start with too much space.** Begin generous and remove space until it looks right; never stretch content to fill the screen [48].
+**X4. Avoid a design that could belong to anyone.** Tell. Swap in a competitor's logo and nothing else would need to change [15][16][17]. Spot: no detail only this subject has.
 
-### Hierarchy
+**X5. Avoid shipping the first output.** Tell. One generation with no critique pass [18]. Why: the only AI ad NIQ's viewers did not pick as AI was heavily edited by professionals [19]. Spot: flaws one look at full size would catch.
 
-H5. **One focal point.** Each view needs one most important thing, the biggest or highest-contrast element, and at most two large elements [38]. The squint test shows one first stop [38]; shrink, mute or remove what competes.
+**X6. Avoid leftovers.** Floor. "Made with [tool]" watermarks, an "Edit with Lovable" tab or "Built with v0" footer line [20], lorem ipsum, prompt text and process notes left in the design [4]. Spot: read every word, including small print and image corners.
 
-H6. **Three sizes, three contrasts.** At most three text sizes and three contrast levels in a view [38][39]; NN/g's example is body 14 to 16px, subheads 18 to 22px, headers up to 32px, and a poster or hero headline can be larger [38]. Fix: merge near-duplicates.
+**X7. Avoid swapping one default for another.** Tell. Dodging one stock look into the next: purple gradients into cream, serif and terracotta, or near-black with acid green [21][22]. Told to avoid Inter, one model moved straight to Space Grotesk [15]. A bare text page is the same mistake. Spot: a fix that matches another item on this list.
 
-H7. **Weight and colour, not just size.** Two weights usually suffice (400 or 500, and 600 or 700); nothing under 400 for interface text [47].
+**X8. Avoid the untouched builder kit.** Tell, New. shadcn/ui components with the default grey palette, Lucide icons on every card, Inter or Geist, pill buttons, rounded corners on everything, often on a dark page with a purple-to-blue headline [20][23]. Builders such as Lovable, Bolt and v0 share this stack, so their output converges on one look [20]. Spot: nothing in the theme was changed from the library default.
 
-H8. **De-emphasise to emphasise.** Mute competitors instead of making the key element louder [48].
+## L. Layout and spacing
 
-H9. **One primary action.** One solid primary button per view; secondary as outline buttons, tertiary as links [47].
+**L1. Avoid spacing off a scale.** Rule, New. Gaps like 13, 18, 22, 30 and 44px with no pattern, or 24, 28 and 32px used for the same job [1][24]. Why: a short scale on a base unit keeps rhythm (Material uses 8dp [25]), with steps at least 25% apart [26]. Spot: list the computed margins and gaps.
 
-H10. **Front-load the words.** People scan the top lines and left edge [41], often only the first two words of a heading or list item [58]; 80% of fixations fall on the left half of a page [59]. Fix: key information first and left; headings and bullets open with the words that carry the meaning, so the page scans in layers [57].
+**L2. Avoid groups that do not group.** Rule. The same space inside a group as between groups; a heading as close to the section above as to its own content [27][28]. Spot: blur the view; groups should still read as groups.
 
-### Typography
+**L3. Avoid ragged edges.** Rule. Text, icons and images starting on many different left edges, blocks that ignore the column grid [25][29]. Spot: count distinct left edges.
 
-H11. **One or two typefaces.** Most designs can carry a second font; few a third [46]. Fix: one family, or two with fixed roles [46].
+**L4. Avoid competing focal points.** Rule. No one most important thing, more than two large elements fighting for first look [28], or a big moving visual that drowns the headline [30]. Why: making everything loud makes nothing loud; mute competitors instead [26]. Spot: the squint test shows no single first stop [28].
 
-H12. **Line length 45 to 75 characters.** Body text reads best at 45 to 75 characters per line [45][44]; at most 80 at WCAG AAA [35]. Fix: `max-width: 65ch` to `70ch` [44].
+**L5. Avoid stretching content to fill the screen.** Rule. Text and cards spread across the full width because the space is there [26].
 
-H13. **Line height and size.** Body line spacing 120% to 145%; web body 15 to 25px [18][68]. Text must not clip when users set line height 1.5, paragraph spacing 2, letter spacing 0.12 and word spacing 0.16 times the font size [63]. Fix: body 16 to 18px, line height about 1.4 to 1.5, headings tighter; no fixed-height text boxes.
+**L6. Avoid a reading order that differs from the visual order.** Floor. Source or tab order that jumps around what the eye sees [31]. Spot: tab through, or read the DOM order.
 
-H14. **Use a hand-picked type scale.** Pick sizes from a short preset list, for example 12, 14, 16, 18, 20, 24, 30, 36, 48, 60, 72 [48].
+**L7. Avoid a first screen that misses the point.** Rule (web). The offer and main action below the fold, or a hero sized for one screen that misses others [32]. Why: about 57% of page viewing time is above the fold [33]. Spot: at 1280 and 375px, can you say what it is and what to do without scrolling?
 
-H15. **Caps and quotes.** All caps only for labels under one line, with 5% to 12% extra letter spacing; caps paragraphs read about 13% slower [18][69]. Curly quotes; no letter spacing on lowercase body text [18]. Body text is flush left; full justification (both edges straight) only with hyphenation [68][35]. This rule is not about centring.
+**L8. Avoid the template hero.** Tell. Centred pill badge, big headline, one-line subhead, one or two buttons, over a gradient [6][34][7].
 
-### Colour
+**L9. Avoid three identical cards.** Tell. Three equal cards, each with an icon, a two-word title and one line [6][34][18].
 
-H16. **Contrast floors.** Text 4.5:1; large text (24px, or 18.5px bold) 3:1 [32]. Controls, icons and chart marks 3:1 against neighbours, except inactive controls; a control with a passing label needs no 3:1 border [33]. Custom focus rings: at least 2px with a 3:1 change [64]. Measure every pair; 4.49:1 fails. WCAG 3 is still a draft [66], so APCA scores are advice, not a pass [67].
+**L10. Avoid the section kit.** Tell. Stat banner, 1-2-3 steps, FAQ accordion, logo bar, three pricing tiers with "Most Popular", a four-column footer [6][7], an email sign-up closing every page [32], there because templates have them. Spot: sections with thin content.
 
-H17. **Small palette.** Simple designs use about two main and two secondary colours [38]. 60-30-10 is an interior-design rule of thumb, not a tested rule [55]; use it only as a starting split. Fix: main colour, neutrals, one accent.
+**L11. Avoid a card around everything.** Tell, New. Boxes inside boxes, each with its own border, fill or shadow; every block wrapped in a card [35]. Spot: more than one container level for one group.
 
-H18. **Dark grey, not black, and real neutrals.** Start dark surfaces from a very dark grey such as Material's #121212 and plan 8 to 10 greys [48][76], tinted warm or cool to suit the main colour [48][49]. On dark surfaces, desaturate accents [76].
+**L12. Avoid a bento grid by default.** Tell. A mosaic of mixed-size rounded tiles for content with no such shape [22][36].
 
-H19. **No grey text on colour.** Secondary text on a coloured background should be a lighter or darker shade of that hue, not grey or lowered opacity [47][49]. Then re-check H16.
+**L13. Avoid hero clutter.** Tell. Floating badges, chips, stickers or mini-cards scattered over the hero [17].
 
-H20. **Never colour alone.** Never carry meaning by colour only [38][65]; add text, an icon, pattern or underline. About 8% of men of European descent have red-green colour deficiency [70]: never rely on red against green; use blue with orange, or magenta with green [71][72].
+**L14. Avoid decoration in place of the subject.** Tell. Glowing orbs, blobs, iridescent 3D shapes and dot grids where the product should be [34][7]. Spot: remove it; if nothing is lost, it was filler.
 
-### Imagery and composition
+## Y. Type
 
-H21. **Text on images must pass.** Text over a photo or gradient needs 4.5:1 against the pixels behind it [32]. Fix: a scrim, a solid panel, or a calmer spot.
+**Y1. Avoid web body text under 16px.** Rule. Small grey body copy. Why: web body text reads well at 15 to 25px [37][38]; under 16px sits at the bottom edge. Spot: computed paragraph size at both widths.
 
-H22. **Show the real thing.** Users study real product and people photos and ignore decorative and stock images [42]. Fix: the actual product, place, team or work, or nothing.
+**Y2. Avoid lines too long or too short.** Rule. Body lines outside 45 to 75 characters [39][40]; over 80 fails WCAG AAA [41]. Spot: count characters in a typical line at 1280px.
 
-H23. **Treat image sets alike.** One size, ratio, crop and treatment per set, as Material does for thumbnails [37].
+**Y3. Avoid cramped or clipping text.** Floor. Body line spacing outside about 120% to 145% [37][38]; text boxes with a fixed height. Why: text must not clip when users set line height 1.5, paragraph spacing 2, letter spacing 0.12 and word spacing 0.16 times the font size [42]. Spot: apply those overrides and look for overlap.
 
-H24. **Place the subject on purpose.** The rule of thirds barely predicts image quality [53]. Fix: crop to an obvious subject, with a calm area for copy.
+**Y4. Avoid too many sizes and levels.** Rule. More than three text sizes or three contrast levels in a view [28][43]; a new type size in every section, or every section heading at the same weight [24]. Sizes picked ad hoc, not from a short list [26]. Spot: list the computed sizes.
 
-H25. **Less is more appealing.** Low complexity and a genre-familiar layout are rated most appealing, judged within 50ms [50][51]; taste varies by country, age and education [52]. Familiar structure is good; generic styling is not (Part B).
+**Y5. Avoid three or more typefaces.** Rule. Most designs carry a second typeface; few carry a third [44]. Three fonts is a listed AI tell [24]. Spot: count families.
 
-### Copy on visuals, targets and consistency
+**Y6. Avoid thin or many weights.** Rule. Interface text under weight 400, or more than two weights doing one job [45].
 
-H26. **One message per ad.** Ads and social posts only, never web heroes or slides. One message and one action; Meta recommends primary text of 1 to 3 lines (about 125 characters) and headlines of about 40 characters [54]. Detail goes in the caption.
+**Y7. Avoid caps paragraphs and badly spaced caps.** Rule. Caps beyond a short label read about 13% slower [46]; caps need 5% to 12% extra letter spacing, lowercase body text none [37]. Spot: caps runs longer than one line.
 
-H27. **Targets big enough.** Controls (not labels or badges) need at least 24 by 24 CSS px, or spacing [34]; Apple asks 44 by 44pt [36]. Measure the rendered box, not the padding value: a 48px-tall button passes whatever its padding says.
+**Y8. Avoid justified text without hyphenation.** Rule. Both edges straight, with rivers of space between words [38][41].
 
-H28. **Same thing, same look.** Each role (button, card, link, heading level) has one style, following platform conventions [43].
+**Y9. Avoid straight quotes and wobbling figures.** Rule. Straight quotes in display text [37]; proportional figures in tables or numbers people compare [38]. Spot: columns of numbers that do not line up.
 
-H29. **Cut what does not help.** Extra elements compete with the ones that matter [43]; delete what does not help the reader understand or act, though chart titles and annotations that state the point do help [84][85].
+**Y10. Avoid default fonts and the accent word.** Tell. Inter, Roboto or a system font for everything [15][6][16][7]; Space Grotesk, Instrument Serif or Geist as the trendy pairing; one italic serif or coloured word in the headline [15][21][6][1][32]; italics in headers [47].
 
-### Structure and reading order
+**Y11. Avoid eyebrow labels and fake numbering.** Tell, New. Small tracked caps or a small monospace pre-heading above every heading ("FEATURES"), called "the mdash of UI design" in October 2026 [48][32]; all-caps pills with wide letter spacing [47]; 01, 02, 03 on items with no order [21][6][36][24]. Spot: a label that repeats the heading under it.
 
-H30. **Build on a grid.** Column grid with fixed margins and gutters; blocks start and end on column edges [61][37].
+**Y12. Avoid punctuation chrome.** Tell, New. Meta strings joined by middle dots, an arrow on every link [21][24], em dashes in interface copy [1][3].
 
-H31. **Reading order matches visual order.** Source order matches the order people read [62].
+## C. Colour and contrast
 
-H32. **The first screen carries the point.** About 57% of page viewing time is above the fold [60]: put the offer and action there, and let the next section peek in [60].
+**C1. Avoid text under contrast floors.** Floor. Text under 4.5:1, or large text (24px, or 18.5px bold) under 3:1 [49]. Low-contrast text is the most common accessibility failure, on 83.9% of top home pages in 2026 [50]. Spot: measure every text pair; 4.49:1 fails.
 
-H33. **Numbers and punctuation.** Tabular figures where numbers are compared; en dashes for ranges, one space after a full stop [68]. No lone word on a headline's last line.
+**C2. Avoid faint controls and marks.** Floor. Input borders, icons, focus rings and chart marks under 3:1 against what is next to them [51]. Inactive controls are exempt; a control with a passing label needs no 3:1 border [51].
 
-### Data visuals
+**C3. Avoid text over busy or variable backgrounds.** Floor. Text over a photo, gradient or translucent panel that drops under 4.5:1 anywhere [49]. Why: on glass, contrast varies across one line [52]; in iOS 26, translucency over busy content hides text and controls [53]. Spot: measure the worst pixels, not the average.
 
-H34. **Pick the chart by the task.** Position on a shared scale is read most accurately, then length, then angle and area; shading worst [77][78]. Fix: bars or dots to compare amounts, lines for change over time [87].
+**C4. Avoid meaning by colour alone.** Floor. Status, errors, links or chart series told apart only by colour [28][54]. Why: about 8% of men of European descent have red-green colour deficiency [55]; red against green fails them [56][57]. Spot: view in greyscale.
 
-H35. **Colour scale matches the data.** Categories: distinct hues, 3 to 5 comfortable, over 8 fails [75][73]; ordered values: one hue light to dark; diverging only around a real midpoint [73]; no rainbow [74]. To stress one series, grey the rest [75].
+**C5. Avoid grey or faded text on colour.** Rule. Secondary text on a coloured background set in grey or lowered opacity [45][58]. Spot: grey text on a tinted panel; then re-check C1.
 
-H36. **No 3D, no dual axes.** Depth makes values slower and harder to read [82]; two y-axes let scales invent a relationship [83]. Pies only for part-to-whole with few flat slices [81].
+**C6. Avoid fully saturated accents on dark surfaces.** Rule. Material's dark theme desaturates colours for dark surfaces [59]. Spot: pure hues on near-black.
 
-H37. **Bars start at zero.** Length is the value, so bar axes start at zero and each bar ends on its value against the gridlines; truncation makes small gaps look large [79][80]. Line charts may zoom when change is the point [79].
+**C7. Avoid treating APCA or WCAG 3 scores as a pass.** Rule. WCAG 3 is still a draft [60]; APCA is advice, not conformance [61]. Spot: a report citing Lc values with no WCAG 2 ratio.
 
-H38. **Title states the finding.** "North grew most", not "Revenue by region"; people recall titles and annotations that carry the message [84][85]. Label marks directly, not in a legend; sort bars unless order matters; light gridlines [86][80].
+**C8. Avoid the purple-blue gradient.** Tell. Violet-to-indigo washes on the hero or buttons, often with gradient headline text [15][6][34][7]. Spot: colour with no link to the subject [18].
 
-### Slides
+**C9. Avoid dark mode with grey text.** Tell. Near-black background with mid-grey body text that barely passes [21][6]; pure #000 surfaces with no light mode [62]. Spot: body text near the 4.5:1 line on dark.
 
-H39. **Sentence headline, visual evidence.** One point per slide, as a sentence headline of at most two lines, backed by a chart, image or diagram rather than bullets; recall rose from 69% to 79% [88][89]. Labels sit beside what they name [90].
+## M. Motion and effects
 
-H40. **Type that reads across a room.** Headline at least 28pt, body 18 to 24pt, callouts at least 14pt [89]. Keep the spoken script off the slide [90].
+**M1. Avoid motion people cannot stop.** Floor. Carousels, marquees or animations that move for more than 5 seconds without a way to pause, stop or hide them [63]. Why: auto-forwarding carousels move content away before people read it [64][65]. Spot: anything still moving after 5 seconds.
 
-### Logos and icons
+**M2. Avoid ignoring reduced motion.** Floor. Parallax, zooms and large movement on scroll or click with no off switch; `prefers-reduced-motion` ignored [66][7]. Why: it can make people with vestibular disorders ill [66]. Spot: turn on reduced motion and reload.
 
-H41. **Logos work small and in one colour.** Check at 16 and 32px; drop detail that vanishes [96]. Supply one-colour and reversed versions, with clear space measured from a part of the mark [114]; favicons square and over 48px [113]. Moderately detailed, natural marks are recognised best [95].
+**M3. Avoid motion on everything.** Tell, New. Every section fades up, every card lifts on hover [21][18][7]. Content hidden until a scroll animation fires, so a slow or blocked script leaves a blank page [1]. Spot: disable scripts or scroll fast.
 
-H42. **One icon family.** One grid, stroke, corner style, size and perspective, weight matched to nearby text; pad asymmetric icons to centre them by eye [96][98]. App icons: no photos or thin strokes [97].
+**M4. Avoid gimmick texture and motion.** Tell, New. Grid-paper or grain backgrounds, logo marquees, bouncing buttons, blinking cursors, pulsing dots travelling along connector lines, a glow that follows the cursor, confetti [36][22][1]. Spot: motion that reports nothing real.
 
-H43. **Label icons.** Few icons are understood without a word; pair them with text [99]. A sparkle does not reliably mean AI [100].
+**M5. Avoid glassmorphism by default.** Tell. Translucent blurred panels over a gradient [6][34][7], used as style rather than for real overlays. Why: it adds contrast failures (C3) [52][53]. Spot: frosted panels on a static page.
 
-### Ads and social
+**M6. Avoid one shadow and radius on everything, or a mix with no logic.** Tell. The same soft shadow and large radius (20px or more) everywhere [21][18][7][62], or radii of 8, 12, 16 and 24px and shadows on some cards but not others [24]. Spot: list radius and shadow values by element role.
 
-H44. **Brand and product early, in the right frame.** Brand and product visible from the first frame, in the brand's own colours and shapes [93][94]. Build to the placement (4:5 feed, 9:16 Stories and Reels); keep key text and logos off the edges the app covers [91][92].
+**M7. Avoid accent stripes.** Tell. A coloured top or left border on each card [6][36]. Spot: stripes that mean nothing.
 
-## Part B: AI tells
+**M8. Avoid glows, sparkles and shimmer.** Tell. Big coloured glows, sparkles for anything AI [67], shimmer on things that are not loading [6][7]. Spot: emphasis that does not come from size, weight, position or contrast [45].
 
-Defaults that read as generated. A tell is a pattern the model added, not one the brief chose; a gradient or card with a reason can stay [56]. Fix with something specific to the subject.
+## U. Interface and interaction
 
-### Layout
+**U1. Avoid hidden focus.** Floor. Focus outlines removed, or too faint to see [68][35]. Custom focus rings under 2px or under a 3:1 change [69]. Spot: tab through every control.
 
-T1. **Template hero.** Centred pill badge, big headline, one-line subhead, one or two buttons [3][24][31]. Fix: open with the most characteristic thing in the subject's world, such as the product or a real photo [2], sized to its content [26].
+**U2. Avoid small targets.** Floor. Controls under 24 by 24 CSS px without enough spacing [70]; under 44 by 44pt on Apple platforms [71]. Spot: measure the rendered box, not the padding value.
 
-T2. **Three identical cards.** Three equal cards, each with an icon, two-word title and one line [3][24][26]. Fix: the real offer with specifics, sized by importance [26].
+**U3. Avoid placeholders as labels.** Floor. Fields labelled only by placeholder text, or not at all. Why: the hint vanishes on typing, strains memory and is usually low contrast [72]; missing labels are on 51% of top home pages [50]. Spot: type into each field.
 
-T3. **Section kit.** Stat banner, 1-2-3 steps, FAQ accordion, "Trusted by" logo bar, three pricing tiers [3][31]. Fix: only sections with real content.
+**U4. Avoid controls with no name.** Floor. Icon-only buttons and links with no accessible text; empty buttons on 30.6% and empty links on 46.3% of top home pages [50]. Spot: read the accessible name of every control.
 
-T4. **Decoration instead of subject.** Glowing orbs, blobs, iridescent 3D shapes and dot grids where the product should be [24][31].
+**U5. Avoid weak signifiers.** Rule. Links styled as plain text, ghost buttons as the main action, flat elements that do not look clickable. Why: weak signifiers cost 22% more time and 25% more fixations in NN/g testing [73]. Spot: can you tell what is clickable from a screenshot?
 
-T5. **Placeholder icons and emoji.** The obvious icon in a tinted rounded square; rockets and bolts as bullets [3][24][31]. Fix: one fitting icon set, or none [26].
+**U6. Avoid hiding the main navigation on desktop.** Rule. A hamburger menu where there is room for visible links. Why: hiding navigation cut discoverability almost in half and raised task time and difficulty [74]. Spot: a hamburger at 1280px.
 
-T6. **Motion on everything.** Every section fades up, every card lifts on hover [2][26][31]. Fix: one considered moment or responses to input; respect reduced motion [2][26].
+**U7. Avoid carousels for key content.** Rule. The main message in slide 2 of 5. Why: people miss rotating content [64][65].
 
-T31. **Cards inside cards.** Boxes nested in boxes, each with its own border, fill or shadow [56]. Fix: one container level; group the inside with space and type (H2).
+**U8. Avoid several primary actions.** Rule. More than one solid primary button per view [45], or two hero buttons of equal weight [30]. Spot: count filled buttons in each view.
 
-T32. **Diagram chrome.** Pulsing or glowing dots travelling along connector lines, and labels on things that need none [56]. Fix: connectors only for real flows, still unless motion explains a step (T6).
+**U9. Avoid inconsistent roles and broken conventions.** Rule. One role (button, link, card, heading level) styled several ways, or controls that work against platform habits [75]. Why: genre-familiar layouts are judged more appealing within 50ms [76][77].
 
-T33. **Bento grid by default.** A mosaic of mixed-size rounded tiles for content with no such shape [109][110]. Fix: layout that follows the content.
+**U10. Avoid missing and fake states.** Floor, New. Only the happy path exists: no loading, empty or error states [35]; a form that says thanks without sending anything [32]. Spot: load with no data, a slow network and a failing request.
 
-T34. **Hero clutter.** Floating badges, chips, stickers or cards in the hero [111]. Fix: brand, headline, one sentence, one action, one image [111].
+**U11. Avoid layouts that break when narrow or zoomed.** Floor. Two-way scrolling, clipped or overlapping content at 320 CSS px wide or 400% zoom [78]. Spot: set the viewport to 320px.
 
-T35. **Gimmick texture and motion.** Grid-paper backgrounds, logo marquees, bouncing buttons, blinking cursors, pulsing dots, confetti [110][109]. Fix: remove; keep motion that reports real state.
+**U12. Avoid stock controls and lazy hover.** Tell, New. Library-default buttons and inputs, hover states that only fade opacity [1].
 
-### Colour and effects
+**U13. Avoid placeholder icons and emoji bullets.** Tell. The obvious icon in a tinted rounded square; rockets and bolts as bullets [6][34][7]; thin icons that only roughly match their label [1]; emoji as interface icons [23][47]. Spot: cover the label; does the icon still say it?
 
-T7. **Purple-blue gradient.** Violet-to-indigo washes on hero or buttons, often with gradient headline text [1][3][24][31]. Fix: colour from the subject itself [26]; solid headline text.
+## W. Words on the design
 
-T8. **Glassmorphism.** Translucent blurred panels over a gradient [3][24][31]. Fix: translucency only for real overlays.
+**W1. Avoid burying the key words.** Rule. Headings and list items that open with filler. Why: people scan the top lines and left edge [79], often only the first two words [80]; 80% of fixations fall on the left half of a page [81]; layered headings let a page be scanned [82]. Spot: read only the first two words of each heading.
 
-T9. **Glows and sparkle.** Big coloured glows, sparkles for anything AI [100], shimmer on things not loading [3][31]. Fix: emphasis by size, weight, position and contrast [47].
+**W2. Avoid vague link text.** Floor. "Click here", "more", "learn more" with nothing around them to say where they go [83]; on 15.2% of top home pages [50]. Spot: read the links alone, out of context.
 
-T10. **One shadow and radius on everything.** The same soft shadow and radius everywhere [2][26][31]. Fix: elevation only for things above others; radius by role [26].
+**W3. Avoid lines that could sell anything.** Tell. "Revolutionize your workflow", "Unlock your potential", reassuring lines with no fact ("Built for how you work") [18][7]. Spot: a line that fits a competitor word for word.
 
-T11. **Accent stripes.** A coloured top or left border on each card [3][110]; once a human tip [48], now a tell. Fix: separate with space or type.
+**W4. Avoid AI vocabulary.** Tell. Seamless, elevate, supercharge, game-changing, cutting-edge, delve, vibrant [18][84][7]. Spot: search for them.
 
-T12. **Dark mode with grey text.** Near-black background, mid-grey body text barely passing [2][3]. Fix: pick light or dark for the audience, then pass H16 [26].
+**W5. Avoid stock sentence shapes.** Tell. "Not just X, it's Y", "not only A, but also B", and triplets like "fast, simple and secure" [84][3]. Spot: lists of three everywhere.
 
-T13. **Swapping to the next default.** Dodging purple into another stock look: cream, serif and terracotta, or near-black with acid green [2][109]. Told to avoid Inter, one model moved straight to Space Grotesk [1]. A bare text page is the same mistake. Fix: derive the look from the subject and brief [1][2].
+**W6. Avoid default buttons and casing.** Tell. "Get started" on every button [7]; a "Scroll to explore" cue [47]; Title Case On Every Heading [84]. Spot: a button that does not say what happens next.
 
-### Type
+## P. Photos, AI images and video
 
-T14. **Default fonts and the accent word.** Inter, Roboto or a system font for everything [1][3][4][31], or Space Grotesk, Instrument Serif or Geist, often with one italic or coloured headline word [1][2][3]. Fix: type chosen for the brief (H11).
+**P1. Avoid generated text in images.** Floor. Gibberish signage, misshapen letters, a wrong letter in a logo [85][86]. Why: text-to-image models still produce typos and missing or extra characters [87]; in a September 2026 test of the newest models, a dense street scene still had a spelling slip and a sticker that garbled its own text [88]. Spot: read every letter at 100%.
 
-T15. **Eyebrow labels.** Small tracked caps above each section ("FEATURES"), or 01, 02, 03 numbering on items with no order [2][3][110]. Fix: delete labels that repeat the heading.
+**P2. Avoid broken anatomy.** Floor. Extra or fused fingers, odd teeth, limbs that bend wrong, glasses merging into faces [89][90][85][91][86]. Why: in a 340,000-image study, abnormal human anatomy made up 61.5% of flawed images and hand deformity 31.9% [92]. Spot: zoom on hands, eyes, teeth and joints.
 
-T16. **Punctuation chrome.** Meta strings joined by middle dots, an arrow on every link [2], straight quotes [18]. Fix: plain words, curly quotes, arrows only for navigation.
+**P3. Avoid objects that merge or could not work.** Floor. Objects passing through each other, straps melting into hands, meaningless dials, a product that changes shape [89][93]. Abnormal overlap between elements was in 27% of flawed images [92]. Spot: trace every edge where two things meet.
 
-### Imagery
+**P4. Avoid generated group shots without a close check.** Rule. Scenes with several people score far worse than single-subject ones [92]. Spot: check every person, not just the front one.
 
-T17. **Generated text and logos.** Gibberish signage, misshapen letters, a wrong letter in a logo [10][105]. Set all type and logos yourself.
+**P5. Avoid light, shadow and perspective that disagree.** Rule. Shadows falling different ways, warped perspective, reflections that do not match [89][90][91][86]. Spot: check every shadow against the light source.
 
-T18. **The glossy AI look.** Oversaturated colour, exaggerated rim light, cinematic backgrounds, generic bokeh, overperfection [9][11][25]. Fix: art-direct to a real reference; a grain filter is not a fix [29].
+**P6. Avoid too-perfect faces.** Tell. Poreless, shiny, too-gorgeous faces [90][91]. AI faces are more average and attractive than real ones [94], and people spot them at chance, 48.2% [95]. Spot: irregular pupils and mismatched catchlights [96][97].
 
-T19. **Too-perfect faces.** Poreless, shiny, too-gorgeous faces [9][11]; AI faces are more average and attractive than real ones [28], and people spot them at chance [104]. Check for irregular pupils and mismatched catchlights [102][103]. Fix: real people (H22) or ordinary, specific faces.
+**P7. Avoid the glossy AI look.** Tell. Oversaturated colour, exaggerated rim light, cinematic backgrounds, generic bokeh, overperfection [90][91][98]. A grain filter does not hide it [99]. Spot: the image could be from any brand's feed.
 
-T20. **Light, physics and anatomy that disagree.** Mismatched shadows, warped perspective, wrong reflections, fused fingers, teeth or glasses merging into the face [8][9][10][11][105]. Fix: check at 100% zoom. One odd detail is not proof; call an image generated only on two or more kinds of error, never on a detector alone [8][105].
+**P8. Avoid generic aspirational scenes.** Tell. A figure gazing into the distance, staged teamwork, scenes that could sell anything [98][100]. Spot: nothing in the frame is specific to this subject.
 
-T21. **Generic aspirational scenes.** A figure gazing into the distance, staged teamwork, scenes that could sell anything [25]. Fix: specific people, places and products [7] (H22).
+**P9. Avoid decorative images where the real thing exists.** Rule. Stock or generated filler instead of the actual product, place or team. Why: users study real product and people photos and ignore decorative and stock images [101].
 
-T22. **The AI illustration look.** Faux-sketch or soft rendering over a generic pretty face, folds and perspective that break the style's rules [29][6]. Fix: illustration with a point of view, or generated art for concepts only.
+**P10. Avoid mismatched image sets.** Rule. One set with mixed sizes, ratios, crops or treatments [25]. Spot: line up the set side by side.
 
-T36. **Objects that could not work.** Straps melting into hands, meaningless dials, a product that changes between frames [8][101]. Fix: the real product (H22), or repair by hand [101].
+**P11. Avoid style and object drift across a set.** Tell. A series or video that switches between realism and a cartoon look, or a product that differs in every shot [102][103]. Viewers of one AI holiday ad cited realism, execution and fit in their backlash [104]. Spot: compare the same object across frames.
 
-### Copy
+**P12. Avoid the AI illustration look.** Tell. Faux-sketch or soft rendering over a generic pretty face; folds and perspective that break the style's own rules [99][105]. Spot: the style holds only at thumbnail size.
 
-T23. **Headlines that sell anything.** "Revolutionize your workflow", "Unlock your potential" [26][31]. Fix: what only this business could say: what it is, for whom, a concrete detail [26].
+**P13. Avoid trusting old tells either way.** Rule, New. In current video, floating hands, flickering light and distorted faces are largely gone [106]; Nano Banana models left the glossy portrait look behind [107]. A clean image is not cleared, and a missing watermark proves nothing [108]. One odd detail is not proof either; detectors miss and mislabel [89][86], and one study found detection at about 76% [93]. Spot: check text, counts, edges and facts; need two kinds of error before calling it.
 
-T24. **AI vocabulary.** Seamless, elevate, supercharge, game-changing, cutting-edge, delve, vibrant [26][30][31]. Fix: plain verbs, concrete claims.
+**P14. Avoid images with no text alternative.** Floor. Informative images with no alt text; missing alt text is on 53.1% of top home pages [50]. Spot: read the alt attribute of every meaningful image.
 
-T25. **Stock sentence shapes.** "Not just X, it's Y" and triplets like "fast, simple and secure" [30]. Fix: one direct statement.
+**P15. Avoid generated video that drifts.** Floor, New. Objects or faces that change shape between frames, sign or shirt text that reorganises, cloth and liquid that move without weight, background people who repeat or melt, audio out of sync [108][106]; one smooth cinematic shot with no cut [108]. Spot: step through frame by frame and compare.
 
-T26. **Default buttons and casing.** "Get started" [31], Title Case On Every Heading [30]. Fix: sentence case; buttons say what happens next ("See pricing").
+**P16. Avoid generated infographics and text-heavy slides as images.** Floor, New. Charts, infographics or slides made as one image, with facts and words baked in. Why: in recent tests a research infographic came back with a wrong year [88], and Nano Banana 2's infographics and charts showed more hallucinations and a house style of one font with the same borders, shadows and icons every time [109]. Spot: check every number, date and word against the source.
 
-T27. **Fake proof.** Round-number stat banners, star ratings, "Trusted by" logo bars, placeholder testimonials [3][31]. Fix: only real, attributable proof; otherwise leave it out, never invent it.
+## D. Charts
 
-### Fit
+**D1. Avoid a chart type that hides the comparison.** Rule. Angle, area or shading where amounts are compared. Why: position on a shared scale reads most accurately, then length, then angle and area, shading worst [110][111]; bars or dots suit amounts, lines suit change over time [112]. Spot: is the key comparison on a shared axis?
 
-T28. **Could belong to anyone.** Swap in a competitor's logo and nothing else needs to change [1][4][111]. Fix: show what only this subject has, from what the owner supplied.
+**D2. Avoid truncated bar axes.** Floor. Bars that do not start at zero, so small gaps look large [113][114]. Line charts may zoom when change is the point [113]; a zero baseline is not always right for them [115]. Spot: read the bar axis minimum.
 
-T29. **AI imagery where trust matters.** Synthetic people, places or products in health, finance, travel or big purchases [15][16]; 62% of Americans reject AI-made people in ads even when disclosed [108]. US ads showing "actual consumers" must use real ones [106]; the EU requires deepfake labels from 2 August 2026 [107]. Fix: real photography or honest disclosure [13][14].
+**D3. Avoid 3D, dual axes and crowded pies.** Rule. Depth makes values slower and harder to read [116]; two y-axes let scales invent a relationship [117]; pies with many or exploded slices [118]. Spot: any perspective, second axis or pie over a few slices.
 
-T30. **Shipping the first output.** One generation, no critique pass [26]; the only AI ad NIQ's viewers missed was heavily edited by professionals [12]. Fix: run this skill at full size and every crop.
+**D4. Avoid colour scales that misread the data.** Rule. Rainbow scales [119]; more than 8 categorical colours, where 3 to 5 is comfortable [120][121]; continuous numbers mapped to hues, which exaggerates differences [115]; diverging scales with no real midpoint [121]. Spot: does each colour step mean a data step?
 
-T37. **Deck sameness.** Every slide alike: topic title, bullets, generic image [112]. Fix: one point per slide (H39), layout chosen by the evidence.
+**D5. Avoid reversed conventions.** Rule. Up or darker meaning less [115]. Spot: does the largest value sit highest and darkest?
 
-T38. **Chart decoration.** Gradient or glowing bars, rainbow series, a legend repeating the axis, shadows on marks, a truncated axis [74][79][86]. Fix: H34 to H38.
+**D6. Avoid legends where labels fit.** Rule. A legend forces back-and-forth and taxes working memory [115][122]. Spot: a legend for series that could be labelled directly.
 
-T39. **Stock-glyph logo.** A letter or stock icon in a gradient rounded square, or a sparkle as the mark [96][100]. Fix: a mark drawn for the name (H41).
+**D7. Avoid titles that name the topic.** Rule. "Revenue by region" instead of the finding. Why: people recall titles and annotations that carry the message [123][124]. Spot: does the title say what the chart shows?
 
-## Per medium
+**D8. Avoid unsorted bars and heavy gridlines.** Rule. Bars in arbitrary order; dark grids that compete with the data [122][114]. Spot: bars with no logic to their order.
 
-Only where the rules differ.
+**D9. Avoid chart decoration.** Tell. Gradient or glowing bars, shadows on marks, a legend repeating the axis [119][113][122]. Spot: ink that encodes nothing.
 
-- **Web and UI:** H9, H27, H30 to H32, T1 to T6, T33 to T35, at 1280px and 375px.
-- **Social and ads:** H26, H44 and H21; not H32. Judge at feed thumbnail size.
-- **Slides and posters:** H39, H40, T37; read at a distance. H9, H27 and H32 do not apply.
-- **Charts:** H34 to H38 and T38 first, then H16 and H20.
-- **Logos and icons:** H41 to H43, T39, at 16px, 32px and full size, in one colour.
-- **AI images:** T17 to T22, T29, T36 at 100% zoom on hands, eyes, teeth, text and edges. Set words and logos as real type.
+**D10. Avoid unchecked generated chart values.** Floor. LLM-made charts were less accurate than human-made ones in testing [125]. Spot: check every plotted value against the source data.
 
-## Final check
+**D11. Avoid distracting chart animation.** Rule. Bars that bounce in or series that move while people read [115]. Spot: motion that does not show a change in the data.
 
-1. Every text pair passes 4.5:1, large text 3:1, controls 3:1 (H16, H21).
-2. One focal point survives the squint test; at most three text sizes and two typefaces (H5, H6, H11).
-3. Body lines 45 to 75 characters, line height about 1.4 to 1.5 (H12, H13).
-4. Spacing from the scale, groups by proximity, blocks on a grid, a few shared edges, sound at phone width (H1 to H3, H30).
-5. One primary action per view; rendered targets at least 24 by 24 px (H9, H27).
-6. Main colour, neutrals and one accent; no pure black (H17, H18).
-7. Images carry information and match each other (H22, H23).
-8. An ad shows one message and the brand at a glance (H26, H44).
-9. A slide makes one point in a sentence headline (H39).
-10. Bars start at zero; chart titles state the finding; marks labelled directly (H37, H38).
-11. Logos and icons read at 16px and in one colour (H41).
-12. No template hero, card trio, section kit, bento or decorative blobs (T1 to T4, T33).
-13. No purple gradient, glass, glow or gradient text (T7 to T9, T14).
-14. No emoji bullets, eyebrow labels, nested cards or default motion (T5, T6, T15, T31, T32, T35).
-15. Every fact, number and data point traces to the brief or original; no filler line added (T23 to T27).
-16. No fix swapped in another default, and the design could only be this one (T13, T28).
+## S. Slides
+
+**S1. Avoid topic labels and bullet walls.** Rule. Headlines like "Results" over bullets, where the point should be. Why: sentence headlines backed by a visual raised recall from 69% to 79% [126][127]. Spot: do the headlines alone carry the argument?
+
+**S2. Avoid type too small for the room.** Floor. Headlines under 28pt, body under 18pt, callouts under 14pt [127]. Spot: check sizes at presentation scale.
+
+**S3. Avoid the script on the slide.** Rule. Speaker notes pasted as slide text; labels set apart from what they name [128]. Spot: paragraphs on a slide.
+
+**S4. Avoid deck sameness.** Tell, New. Every slide the same layout and visual weight: topic title, bullets, a generic image [129][4]; always three cards; everything centred [2]; every card the same medium-loud density [130]. Spot: view as thumbnails; can you tell the slides apart?
+
+**S5. Avoid decoration with no job.** Tell, New. Abstract 3D spheres, glassy gradients [4][3], a single highlighted text box off to one side [3], shapes that hold nothing [2]. Spot: remove it; if nothing is lost, it was filler.
+
+**S6. Avoid clipped text and spacing drift.** Floor, New. Text that overflows or is cut off because no one viewed the slide at full size; margins that shift from slide to slide [2]. Spot: page through at full size and watch the edges.
+
+**S7. Avoid flattened hierarchy and ragged density.** Rule, New. Bullets of very different importance at the same weight; a sparse card spread thin next to a dense card crammed to the margins; emphasis by bold, colour and size on the same word at once; body text shrunk to fit [130]. Spot: one first stop per slide?
+
+## G. Logos and icons
+
+**G1. Avoid logos that fail small or in one colour.** Rule. Detail that vanishes at 16 and 32px [131]; no one-colour or reversed version; clear space not defined [132]; a favicon that is not square or is 48px or smaller [133]. Moderately detailed, natural marks are recognised best [134]. Spot: view at 16px in black only.
+
+**G2. Avoid mixed icon families.** Rule. Icons with different grids, strokes, corners, sizes or perspective; weights that do not match nearby text; asymmetric icons not centred by eye [131][135]. Spot: line them up in a row.
+
+**G3. Avoid unlabelled icons.** Rule. Few icons are understood without a word [136]; a sparkle does not reliably mean AI [67]. App icons with photos or thin strokes [137]. Spot: cover the labels and ask what each does.
+
+**G4. Avoid the stock-glyph or orb logo.** Tell. A letter or stock icon in a gradient rounded square, a sparkle as the mark [131][67], the spherical or spiral orb many AI companies share [138], or a gradient logo [47]. Spot: the mark would suit any company in the category.
+
+**G5. Avoid generated logos taken as finished.** Rule. In expert review, most logos from six AI logo makers lacked proportion, balance and unity [139]. Spot: check alignment, spacing and optical balance by hand.
+
+**G6. Avoid uncleared generated marks.** Floor. AI logos may resemble existing trade marks; run a clearance search before use [140]. Spot: reverse image search and a trade mark search.
+
+## A. Ads and social
+
+**A1. Avoid more than one message.** Rule. Several offers or actions in one ad; copy past platform limits. Meta recommends primary text of about 125 characters and headlines of about 40 [141]; LinkedIn truncates intro text over 150 characters [142]. Spot: count characters and count asks.
+
+**A2. Avoid a late or hidden brand.** Rule. Brand and product appearing late, or not in the brand's own colours and shapes [143][144]. Spot: is the brand visible in the first frame and at thumbnail size?
+
+**A3. Avoid the wrong frame and covered zones.** Floor. A crop that misses the placement (4:5 feed, 9:16 Stories and Reels), or key text and logos under the platform's buttons and captions [145][146]. On a 1080 by 1920 YouTube Short, keep key content off the top 288px, bottom 672px, left 48px and right 192px [147]. Spot: overlay the platform's safe-zone guide.
+
+**A4. Avoid generated visuals where effort is the message.** Rule. AI imagery in luxury, craft or holiday campaigns. Why: disclosed AI luxury ads were rated lower effort (3.81 against 5.28) and less authentic [11]; backlash to one AI holiday ad centred on realism, execution, authenticity and ethics [104][102]. Spot: would viewers feel a corner was cut?
+
+## Final avoid-check
+
+1. Honesty: invented facts, fake proof, leftovers, synthetic people where trust matters (X1 to X3, X6, U10)?
+2. Contrast: text, controls or focus under floor, over images or glass; colour alone (C1 to C4, U1)?
+3. Reading: body under 16px, lines outside 45 to 75 characters, clipping, too many sizes, weights or faces (Y1 to Y6)?
+4. Access: small targets, unnamed controls, placeholder labels, vague links, no alt, breaks at 320px, order off (U2 to U4, U11, W2, P14, L6)?
+5. Motion: can't be stopped, ignores reduced motion (M1, M2)?
+6. Layout: off-scale spacing, weak groups, ragged edges, competing focal points (L1 to L4)?
+7. Images and video: generated text, anatomy, merging objects, drift, baked-in infographics (P1 to P3, P11, P15, P16)?
+8. Charts and slides: truncated bars, wrong type, misleading colour, unchecked values, small type, clipping, flat hierarchy (D1 to D5, D10, S1, S2, S6, S7)?
+9. Logos and ads: fails at 16px or in one colour, uncleared, several messages, late brand, covered zones (G1, G6, A1 to A3)?
+10. Tells: count X2, X4, X5, X7, X8, L8 to L14, Y10 to Y12, C8, C9, M3 to M8, U12, U13, W3 to W6, P6 to P8, P11, P12, D9, S4, S5, G4.
+11. Fixes: did any add a fact, swap in another default or strip real content (X1, X7)?

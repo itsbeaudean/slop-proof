@@ -1,19 +1,39 @@
-# slop-proof
+# Beau Dean's skills
 
-Skills for AI agents that find and fix AI slop. They work with any agent that can read a skill file.
+Skills for AI agents that find and fix AI slop. Each skill is a folder with a `SKILL.md` that any agent able to read a skill file can use. This repo is where I keep them and update them.
 
 ## slop-proof-design
 
-Like the `unslop` writing skill, but for design. It makes a design better in the style it already has, and stops it looking AI-made. It works on anything visual: web pages and UI, social graphics and ads, slides and posters, charts and data visuals, logos and icons, and AI-generated images.
+Anti-slop for design. It tells an AI agent what to avoid in a design. It doesn't design and it doesn't set a style: the brief, the brand and your taste decide the look.
 
-It gives the agent:
+It covers web pages and UI, social graphics and ads, slides, charts, logos and icons, and AI-generated images and video. It has 114 avoids in 12 areas:
 
-- **44 hard rules** (H1 to H44) on spacing, hierarchy, type, colour, imagery, copy, targets, grids and reading order, charts, slides, logos and icons, and ad formats. Every number comes from a cited source, such as WCAG, eye-tracking studies, graphical-perception research and platform guidelines.
-- **39 AI tells** (T1 to T39): the template hero, three identical cards, bento grids, purple gradients, glass, glows, emoji bullets, eyebrow labels, cards inside cards, fake stats and star ratings, stock headlines, same-looking decks, decorated charts, stock-glyph logos, too-perfect faces and objects that could not work.
-- **A workflow**: gather the brief and approved examples, review a mock-up before building, render and scan, list hits by rule id, fix in priority order, then run a 16-point final check. A short note per medium says which rules matter most there.
-- **Guard rails**: keep the owner's style, never gut the design, never invent features, numbers, data, customers or quotes, and never add filler copy. Missing facts get a short placeholder such as `[customer quote]`.
+| Area | Avoids |
+| --- | --- |
+| X. Content and honesty (all media) | 8 |
+| L. Layout and spacing | 14 |
+| Y. Type | 12 |
+| C. Colour and contrast | 9 |
+| M. Motion and effects | 8 |
+| U. Interface and interaction | 13 |
+| W. Words on the design | 6 |
+| P. Photos, AI images and video | 16 |
+| D. Charts | 11 |
+| S. Slides | 7 |
+| G. Logos and icons | 6 |
+| A. Ads and social | 4 |
 
-`SOURCES.md` lists all 114 sources and labels each one as research, industry research, a standard or guideline, practitioner advice or journalism.
+Each avoid says what the problem looks like, why it hurts or reads as AI-made, and how to spot it. Each is tagged:
+
+- **Floor** (30): accessibility, legibility or honesty, such as contrast under 4.5:1, text that clips, motion you can't stop, or invented numbers. Always a hit.
+- **Rule** (46): a sourced usability or craft failure, such as body text under 16px on the web, three or more typefaces, a truncated bar axis or a hidden menu on desktop. A hit unless the brief breaks it on purpose.
+- **Tell** (38): a default that reads as AI-made, such as the template hero, three identical cards, purple gradients, eyebrow labels, too-perfect faces or an orb logo. One alone is fine if chosen; several together read as generated.
+
+It keeps up with current tools. Avoids marked **New** come from sources published between May and October 2026: the untouched shadcn and Lucide kit that vibe-coding builders ship, monospace pre-headings, forms that say thanks without sending, video that drifts between frames, infographics with facts baked into a generated image, and AI decks with flattened hierarchy. It also warns that current image and video models have dropped the old giveaways, so a clean image proves nothing.
+
+Use it two ways: as guardrails loaded before an agent designs anything, or as a review pass that lists hits as `id: where: what` (for example `C1: .sub on hero: 3.2:1`). The agent may propose the smallest fix for each hit. It must not invent facts, swap one default for another, or strip real content.
+
+`SOURCES.md` lists all 147 sources, each labelled as research, industry research, a standard or platform guideline, practitioner advice or journalism, with the ids that cite it.
 
 ## Install
 
@@ -29,15 +49,13 @@ Or do it yourself: clone the repo and copy the `slop-proof-design` folder into y
 git clone https://github.com/itsbeaudean/slop-proof.git
 ```
 
+To get updates, pull the repo again or ask your agent to reinstall the skill.
+
 ## Use
 
-- "Use slop-proof-design on this" and attach a screenshot, image or file.
-- "Run slop-proof-design on `index.html`", or point it at a component or folder.
-- "Review this ad against slop-proof-design, list the hits by rule id, then fix them."
-
-The agent lists each hit as `id: where: what is wrong` (for example `H16` for contrast or `T7` for the purple gradient), fixes them in order, checks it did not swap in another default, and runs the final check. Give it your brand rules and examples of approved work for better results.
-
-The rules are floors, not taste. They lift most designs, but they will not replace a designer's judgement.
+- "Use slop-proof-design as guardrails while you build this page."
+- "Review this ad against slop-proof-design and list the hits by id."
+- "Run slop-proof-design on `index.html` and propose the smallest fix for each hit."
 
 ## Credit
 
